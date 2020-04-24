@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+
+.button-avaiable {
+font-family: 'Roboto', sans-serif;
+  position: absolute;
+  width:9%;
+z-index: 2;
+  height:5%;
+  text-align:center;
+  background-image: linear-gradient(to right, #2c7873, #52de97);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  transition: border-radius 0.5s;
+}
+.button-avaiable:hover {
+
+  border-radius: 10px;
+}
+
+.button-taken {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  width:9%;
+  z-index: 2;
+  height:5%;
+  text-align:center;
+  background-image: linear-gradient(to right, #FF0000, #CC0033);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  transition: border-radius 0.5s;
+}
+.button-taken:hover {
+
+  border-radius: 10px;
+}
+#myVideo {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  transform: scale(1.5);
+  left: 20%;
+  top: 80px;
+  max-width: 400px;
+}
+input[type=text] {
+  width: 50%;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+  border: 0px solid;
+
+  box-shadow: 0 0 0px rgba(0, 0, 0, 1);
+  -moz-appearance:none;
+  border-bottom:3px solid #757575;
+}
+#submitBtn{
+  position:absolute;
+  left:-5%;
+  top:150%;
+  font-family: 'Roboto', sans-serif;
+  width:70%;
+  background-image: linear-gradient(to right, #2c7873, #52de97);
+  z-index: 2;
+  height:60%;
+  text-align:center;
+
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+
+  transition: border-radius 0.5s;
+}
+#submitBtn:hover{
+
+
+  border-radius: 10px;
+}
+
+
+#preladdning{
+  background-color: white;
+  animation-name: fade;
+  animation-duration: 2s;
+  padding: 0;
+  margin: 0;
+  left: 0px;
+  top: 0px;
+  pointer-events:none;
+
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+
+  position: absolute;
+  z-index: 10;
+  min-height: 100%;
+  min-width: 100%;
+
+  opacity: 0;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+@keyframes fade{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+  @-webkit-keyframes fade{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}

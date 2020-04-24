@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<h1 style="text-align:center; color:black; font-size:60px;">Boka din plats!</h1>
+
+
+
+
+
+
+
+
+
+
+{% for t in tableInfo %}  <!--Kollar igenom all information i databas modellen Table-->
+
+{% if t.isBooked %} <!--Om det står i databas att en plats är bokad så byter jqueryn klassen på knappen från button-avaiable till button-taken-->
+<script>
+  $(document).ready(function(){
+    $("#btn{{t.tableInt|e}}").removeClass("button-avaiable");
+    $("#btn{{t.tableInt|e}}").addClass("button-taken");
+});
+
+</script>
+
+{% endif %}
+
+
+{% endfor %}
+
+<!--Enkel bakgrundsbild som har position:fixed. Vilket ger en parallax effekt om man har en position absolute över-->
+<img src="{{ url_for('static', filename='iscar.jpeg') }}" style="z-index:-1; position:fixed; width:100%; height:100%; left:0%;top:0%;filter:blur(10px) contrast(90%); "/>
+
+
+<div class="map"> <!-- Här visas en karta med alla platser. Knapparna har alltid samma position i bilden, så det gör inte hur mycket man resizear -->
+
+  <button style="top: 30%; left:9%" type="button" class="button-avaiable btnBook" id="btn1" name="button">1</button>
+  <button style="top: 30%; left:20%" type="button" class="button-avaiable btnBook" id="btn2" name="button">2</button>
+  <button style="top: 30%; left:31%" type="button" class="button-avaiable btnBook" id="btn3" name="button">3</button>
+
+  <button style="top: 38%; left:9%" type="button" class="button-avaiable btnBook" id="btn4" name="button">4</button>
+  <button style="top: 38%; left:20%" type="button" class="button-avaiable btnBook" id="btn5" name="button">5</button>
+  <button style="top: 38%; left:31%" type="button" class="button-avaiable btnBook" id="btn6" name="button">6</button>
+
+  <button style="top: 60%; left:9%" type="button" class="button-avaiable btnBook" id="btn7" name="button">7</button>
+  <button style="top: 60%; left:20%" type="button" class="button-avaiable btnBook" id="btn8" name="button">8</button>
+  <button style="top: 60%; left:31%" type="button" class="button-avaiable btnBook" id="btn9" name="button">9</button>
+
+  <button style="top: 68%; left:9%" type="button" class="button-avaiable btnBook" id="btn10" name="button">10</button>
+  <button style="top: 68%; left:20%" type="button" class="button-avaiable btnBook" id="btn11" name="button">11</button>
+  <button style="top: 68%; left:31%" type="button" class="button-avaiable btnBook" id="btn12" name="button">12</button>
+
+  <button style="top: 30%; left:74%" type="button" class="button-avaiable btnBook" id="btn13" name="button">13</button>
+  <button style="top: 30%; left:85%" type="button" class="button-avaiable btnBook" id="btn14" name="button">14</button>
+  <button style="top: 30%; left:96%" type="button" class="button-avaiable btnBook" id="btn15" name="button">15</button>
+  <button style="top: 30%; left:107%" type="button" class="button-avaiable btnBook" id="btn16" name="button">16</button>
+  <button style="top: 30%; left:118%" type="button" class="button-avaiable btnBook" id="btn17" name="button">17</button>
+  <button style="top: 30%; left:129%" type="button" class="button-avaiable btnBook" id="btn18" name="button">18</button>
+  <button style="top: 30%; left:140%" type="button" class="button-avaiable btnBook" id="btn19" name="button">19</button>
+  <button style="top: 30%; left:151%" type="button" class="button-avaiable btnBook" id="btn20" name="button">20</button>
+
+  <button style="top: 38%; left:74%" type="button" class="button-avaiable btnBook" id="btn21" name="button">21</button>
+  <button style="top: 38%; left:85%" type="button" class="button-avaiable btnBook" id="btn22" name="button">22</button>
+  <button style="top: 38%; left:96%" type="button" class="button-avaiable btnBook" id="btn23" name="button">23</button>
+  <button style="top: 38%; left:107%" type="button" class="button-avaiable btnBook" id="btn24" name="button">24</button>
+  <button style="top: 38%; left:118%" type="button" class="button-avaiable btnBook" id="btn25" name="button">25</button>
+  <button style="top: 38%; left:129%" type="button" class="button-avaiable btnBook" id="btn26" name="button">26</button>
+  <button style="top: 38%; left:140%" type="button" class="button-avaiable btnBook" id="btn27" name="button">27</button>
+  <button style="top: 38%; left:151%" type="button" class="button-avaiable btnBook" id="btn28" name="button">28</button>
+
+
+  <button style="top: 46%; left:118%" type="button" class="button-avaiable btnBook" id="btn29" name="button">29</button>
+  <button style="top: 46%; left:129%" type="button" class="button-avaiable btnBook" id="btn30" name="button">30</button>
+  <button style="top: 46%; left:140%" type="button" class="button-avaiable btnBook" id="btn31" name="button">31</button>
+  <button style="top: 46%; left:151%" type="button" class="button-avaiable btnBook" id="btn32" name="button">32</button>
+
+  <button style="top: 54%; left:118%" type="button" class="button-avaiable btnBook" id="btn33" name="button">33</button>
+  <button style="top: 54%; left:129%" type="button" class="button-avaiable btnBook" id="btn34" name="button">34</button>
+  <button style="top: 54%; left:140%" type="button" class="button-avaiable btnBook" id="btn35" name="button">35</button>
+  <button style="top: 54%; left:151%" type="button" class="button-avaiable btnBook" id="btn36" name="button">36</button>
+
+  <button style="top: 62%; left:74%" type="button" class="button-avaiable btnBook" id="btn37" name="button">37</button>
+  <button style="top: 62%; left:85%" type="button" class="button-avaiable btnBook" id="btn38" name="button">38</button>
+  <button style="top: 62%; left:118%" type="button" class="button-avaiable btnBook" id="btn39" name="button">39</button>
+  <button style="top: 62%; left:129%" type="button" class="button-avaiable btnBook" id="btn40" name="button">40</button>
+  <button style="top: 62%; left:140%" type="button" class="button-avaiable btnBook" id="btn41" name="button">41</button>
+  <button style="top: 62%; left:151%" type="button" class="button-avaiable btnBook" id="btn42" name="button">42</button>
+
+  <button style="top: 70%; left:74%" type="button" class="button-avaiable btnBook" id="btn43" name="button">43</button>
+  <button style="top: 70%; left:85%" type="button" class="button-avaiable btnBook" id="btn44" name="button">44</button>
+  <button style="top: 70%; left:129%" type="button" class="button-avaiable btnBook" id="btn45" name="button">45</button>
+  <button style="top: 70%; left:140%" type="button" class="button-avaiable btnBook" id="btn46" name="button">46</button>
+  <button style="top: 70%; left:151%" type="button" class="button-avaiable btnBook" id="btn47" name="button">47</button>
+  <img src="{{ url_for('static', filename='map.png') }}" style=" "/>
+</div>
+
+
+
+
+
+
+{% from "_formhelpers.html" import render_field %}
+
+<div style="position:relative; height:300px; width:20%; background-color:rgba(26, 27, 26, 0.7); left:100%; top:-300px;"><!--En mer kostumiserad form med eget css-->
+  <form method="POST" action="/" style="position:absolute; left: 30%; top: 10%" >
+   <dl style="font-family: 'Cairo', sans-serif; font-size:30px; color:white;">
+    {{ form.csrf_token }}
+
+    {{ render_field(form.tableInt) }}
+
+
+    <input type="submit" id="submitBtn" value="Boka">
+    </dl>
+  </form>
+</div>
+
+
+<script>                                        //Det här scriptet tar texten i knappen och konverterar den till en sträng-variabel för att sedan sättas in i input i formen
+  $("button").click(function() {
+    var str = $( "#" + this.id ).text();
+    $("input:text").val(str);
+});
+</script>
+
+<!--Tanken är att information ska finnas här framöver, men det är inte prio 1-->
+<img src="{{ url_for('static', filename='underdel.png') }}" style="z-index:-1; position:absolute; width:100%; height:100%; left:0%;top:100%; filter:blur(2px) contrast(90%); "/>
+
+
+{% endblock %}
